@@ -162,8 +162,8 @@ def new_tweet():
         photo = ''
     else:
         photo = hexToBase64(binaryFromPhotoObject(data["photo"]))
-    print(data)
-    print("image : ", photo[:20])
+    # print(data)
+    # print("image : ", photo[:20])
     newTweet(username, content, photo)
     return jsonify(data)
 
@@ -266,7 +266,7 @@ def new_like():
     user_id = data['user_id']
     try:
         newLike(tweet_id, user_id)
-        print("Like data", data)
+        # print("Like data", data)
     except:
         print("Post already liked")
     return jsonify({"data": data})
